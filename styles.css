@@ -1,0 +1,48 @@
+:root {
+    --globe-fill: #000000;
+    --globe-outline: #ffffff;
+    --star-fill: #ffffff;
+    --constellation-fill: #ffffff;
+    --constellation-opacity: 1;
+    --graticule-fill: #ffffff;
+    --graticule-opacity: 1;
+    
+}
+
+.globe {
+    stroke: var(--globe-outline);
+    stroke-width: 3.64px;
+    /* To change globe background color, change fill */
+    fill: var(--globe-fill);
+}
+
+.star {
+    stroke: none;
+    fill: var(--star-fill);
+}
+
+.constellation {
+    fill: none;
+    stroke-width: 0.27px;
+    stroke-opacity: var(--constellation-opacity);
+    /* To change constellation color, change stroke */
+    stroke: var(--constellation-fill);
+}
+
+.graticule {
+    fill: none;
+    stroke-width: 0.27px;
+    stroke-dasharray: 0%;
+    /* To change globe lines color, change stroke */
+    stroke: var(--graticule-fill);
+    /* To make globe lines less noticable, decrease stroke-opacity */
+    stroke-opacity: var(--graticule-opacity);
+}
+
+input[type="color"] {
+    margin: .4rem;
+}
+
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
