@@ -10,6 +10,7 @@ const graticuleSlider = document.querySelector('#graticuleSlider');
 
 document.querySelector("#globe").addEventListener('change', function () {
     globeLabel.textContent = this.value.toString();
+    console.log("Changing color");
     document.documentElement.style.setProperty('--globe-fill', this.value);
 });
 
