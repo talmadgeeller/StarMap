@@ -7,6 +7,8 @@ const constellationSlider = document.querySelector('#constellationSlider');
 const graticuleLabel = document.querySelector('#graticuleLabel');
 const graticuleSliderLabel = document.querySelector('#graticuleSliderLabel');
 const graticuleSlider = document.querySelector('#graticuleSlider');
+const dashSliderLabel = document.querySelector('#dashSliderLabel');
+const dashSlider = document.querySelector('#dashSlider');
 
 document.querySelector("#globe").addEventListener('change', function () {
     globeLabel.textContent = this.value.toString();
@@ -46,4 +48,11 @@ graticuleSlider.step = "0.05";
 document.querySelector("#graticuleSlider").addEventListener('change', function () {
     graticuleSliderLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--graticule-opacity', this.value);
+});
+
+dashSlider.step = "0.5";
+
+document.querySelector("#dashSlider").addEventListener('change', function () {
+    dashSliderLabel.textContent = this.value.toString();
+    document.documentElement.style.setProperty('--graticule-dash', this.value);
 });
