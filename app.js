@@ -58,10 +58,10 @@ document.querySelector("#dashSlider").addEventListener('change', function () {
 });
 
 document.querySelector("#exportButton").addEventListener('click', function () {
-    exportText.value = `backgroundColor=${globeLabel.textContent}&outlineColor=${globeOutlineLabel.textContent}&starColor=${starLabel.textContent
-        }&constellationColor=${constellationLabel.textContent
+    exportText.value = `backgroundColor=${globeLabel.textContent.replace('#', '%23')}&outlineColor=${globeOutlineLabel.textContent.replace('#', '%23')}&starColor=${starLabel.textContent.replace('#', '%23')
+        }&constellationColor=${constellationLabel.textContent.replace('#', '%23')
         }&constellationOpacity=${constellationSliderLabel.textContent
-        }&graticuleColor=${graticuleLabel.textContent
+        }&graticuleColor=${graticuleLabel.textContent.replace('#', '%23')
         }&graticuleOpacity=${graticuleSliderLabel.textContent
         }&graticuleDash=${dashSliderLabel.textContent}`
 });
