@@ -14,12 +14,12 @@
 <body>
     <div class="container pt-5">
         <div class="row text-center pb-3">
-            <h1>Star Map Color Configurator</h1>
+            <h1>Star Map Customizer</h1>
         </div>
         <div class="row pb-5">
             <div class="col">
-                <svg width="auto" height="auto" title="D3-Celestial" version="1.1" encoding="UTF-8"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                <svg title="D3-Celestial" version="1.1" encoding="UTF-8" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
                     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox=" 0 0 688 688">
                     <defs>
@@ -10305,48 +10305,89 @@
                 </svg>
             </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-center p-4">
-                <div class="col pb-3">
-                    <h5 id="globeLabel">#000000</h5>
-                    <input type="color" id="globe" name="globe" value="#000000">
-                    <label for="globe">Globe</label>
+        <div class="d-flex">
+            <div class="row justify-content-center">
+                <div class="col p-3">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Globe</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="globeLabel">#000000</h6>
+                            <p class="card-text">Customize the color of the background.</p>
+                            <input type="color" id="globe" name="globe" value="#000000">
+                            <label for="globe">Background Color</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="col pb-3">
-                    <h5 id="globeOutlineLabel">#ffffff</h5>
-                    <input type="color" id="globeOutline" name="globeOutline" value="#ffffff">
-                    <label for="globeOutline">Outline</label>
+
+                <div class="col p-3">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Globe Outline</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="globeOutlineLabel">#ffffff</h6>
+                            <p class="card-text">Customize the color of the globe outline.</p>
+                            <input type="color" id="globeOutline" name="globeOutline" value="#ffffff">
+                            <label for="globeOutline">Outline Color</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="col pb-3">
-                    <h5 id="starLabel">#ffffff</h5>
-                    <input type="color" id="star" name="star" value="#ffffff">
-                    <label for="star">Star</label>
+                <div class="col p-3">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Stars</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="starLabel">#ffffff</h6>
+                            <p class="card-text">Customize the color of the stars.</p>
+                            <input type="color" id="star" name="star" value="#ffffff">
+                            <label for="star">Star Color</label>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col p-3">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Constellations</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="constellationLabel">#ffffff</h6>
 
-            <div class="row justify-content-center p-4">
-                <div class="col">
-                    <h5 id="constellationLabel">#ffffff</h5>
-                    <input type="color" id="constellation" name="constellation" value="#ffffff">
-                    <label for="constellation">Constellation</label>
-                    <h5 id="constellationSliderLabel">1</h5>
-                    <input type="range" min="0" max="1" value="1" class="slider" id="constellationSlider">
-                    <label for="constellationSlider">Constellation Opacity</label>
+                            <p class="card-text">Customize the look of the constellations.</p>
+                            <input type="color" id="constellation" name="constellation" value="#ffffff">
+                            <label for="constellation">Constellation Color</label>
 
+                            <h5 id="constellationSliderLabel">1</h5>
+                            <input type="range" min="0" max="1" value="1" class="slider" id="constellationSlider">
+                            <label for="constellationSlider">Constellation Opacity</label>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                    <h5 id="graticuleLabel">#ffffff</h5>
-                    <input type="color" id="graticule" name="graticule" value="#ffffff">
-                    <label for="graticule">Globe Lines</label>
-                    <h5 id="graticuleSliderLabel">1</h5>
-                    <input type="range" min="0" max="1" value="1" class="slider" id="graticuleSlider">
-                    <label for="graticuleSlider">Globe Lines Opacity</label>
-                    <h5 id="dashSliderLabel">1</h5>
-                    <input type="range" min="0" max="15" value="1" class="slider" id="dashSlider">
-                    <label for="dashSlider">Globes Lines Dash</label>
+                <div class="col p-3">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Globe Lines</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="graticuleLabel">#ffffff</h6>
+                            <p class="card-text">Customize the look of the longitude and latitude lines.</p>
+                            <input type="color" id="graticule" name="graticule" value="#ffffff">
+                            <label for="graticule">Line Colors</label>
+
+                            <h5 id="graticuleSliderLabel">1</h5>
+                            <input type="range" min="0" max="1" value="1" class="slider" id="graticuleSlider">
+                            <label for="graticuleSlider">Line Opacity</label>
+
+                            <h5 id="dashSliderLabel">1</h5>
+                            <input type="range" min="0" max="15" value="1" class="slider" id="dashSlider">
+                            <label for="dashSlider">Dash Length</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row p-3">
+            <div class="input-group p-3">
+                <button class="btn btn-primary" id="exportButton">Export Selections</button>
+                <input type="text" class="form-control" id="exportText"
+                    placeholder="starColor=#ffff00&graticuleOpacity=0.35">
+            </div>
+            <p style="text-align: center">Please submit your exported selection options with your order!</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

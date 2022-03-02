@@ -9,10 +9,10 @@ const graticuleSliderLabel = document.querySelector('#graticuleSliderLabel');
 const graticuleSlider = document.querySelector('#graticuleSlider');
 const dashSliderLabel = document.querySelector('#dashSliderLabel');
 const dashSlider = document.querySelector('#dashSlider');
+const exportText = document.querySelector('#exportText');
 
 document.querySelector("#globe").addEventListener('change', function () {
     globeLabel.textContent = this.value.toString();
-    console.log("Changing color");
     document.documentElement.style.setProperty('--globe-fill', this.value);
 });
 
@@ -55,4 +55,13 @@ dashSlider.step = "0.5";
 document.querySelector("#dashSlider").addEventListener('change', function () {
     dashSliderLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--graticule-dash', this.value);
+});
+
+document.querySelector("#exportButton").addEventListener('click', function () {
+    exportText.value = `backgroundColor=${globeLabel.textContent}&outlineColor=${globeOutlineLabel.textContent}&starColor=${starLabel.textContent
+        }&constellationColor=${constellationLabel.textContent
+        }&constellationOpacity=${constellationSliderLabel.textContent
+        }&graticuleColor=${graticuleLabel.textContent
+        }&graticuleOpacity=${graticuleSliderLabel.textContent
+        }&graticuleDash=${dashSliderLabel.textContent}`
 });
