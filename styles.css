@@ -4,11 +4,10 @@
     --globe-outline-width: 4;
     --star-fill: #ffffff;
     --constellation-fill: #ffffff;
-    --constellation-width: 0.45;
+    --constellation-width: 0.5;
     --constellation-opacity: 1;
     --graticule-fill: #ffffff;
     --graticule-opacity: 0.6;
-    --graticule-dash: 1;
     --graticule-dash: 1;
 }
 
@@ -58,14 +57,24 @@ label {
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
     border-radius: 0;
+    height: 20rem;
+}
+
+.carousel {
+    max-width: 550px;
 }
 
 .carousel-inner {
     padding: 3rem;
 }
 
-@media (max-width: 768px) {
-    .card {
-        height: 23rem;
-    }
+.input-number {
+    border: none;
+    font-weight: bold;
+    max-width: 3.5rem;
+    text-align: center;
+    max-height: 3rem;
 }
+
+.glyphicon-plus:before{content:"\002b"}
+.glyphicon-minus:before{content:"\2212"}

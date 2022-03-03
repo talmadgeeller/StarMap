@@ -10298,9 +10298,8 @@
                 </svg>
             </div>
         </div>
-        <div class="container">
-
-            <div id="carouselExampleDark" class="carousel carousel-dark slide d-md-none" data-bs-ride="carousel">
+        <div class="row justify-content-center">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -10333,9 +10332,26 @@
                                 <p class="card-text">Customize the color of the globe outline.</p>
                                 <input type="color" id="globeOutline" name="globeOutline" value="#ffffff">
                                 <label for="globeOutline">Outline Color</label>
-                                <h5 id="outlineWidthLabel">4</h5>
-                                <input type="range" min="4" max="20" value="4" class="slider" id="outlineWidthSlider">
-                                <label for="outlineWidthSlider">Outline Width</label>
+
+                                <div class="input-group pt-2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number-lg" data-type="minus"
+                                            data-field="globeOutlineWidth">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="globeOutlineWidth" id="outlineWidthLabel"
+                                        class="form-control input-number" value="4" min="4" max="20">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number-lg" data-type="plus"
+                                            data-field="globeOutlineWidth">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <span>
+                                    <label for="outlineWidthLabel">Outline Width</label>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -10360,15 +10376,45 @@
                                 <input type="color" id="constellation" name="constellation" value="#ffffff">
                                 <label for="constellation">Constellation Color</label>
 
-                                <h5 id="constellationSliderLabel">1</h5>
-                                <input type="range" min="0" max="1" value="1" class="slider" id="constellationSlider">
-                                <label for="constellationSlider">Constellation Opacity</label>
+                                <div class="input-group pt-2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number-sm" data-type="minus"
+                                            data-field="constellationOpacity">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="constellationOpacity" class="form-control input-number"
+                                        value="1" min="0" max="1" id="constellationOpacityLabel">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number-sm" data-type="plus"
+                                            data-field="constellationOpacity">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <span>
+                                    <label for="constellationOpacityLabel">Constellation Opacity</label>
+                                </span>
 
-                                <h5 id="constellationWidthLabel">0.45</h5>
-                                <input type="range" min="0" max="2" value="0.45" class="slider"
-                                    id="constellationWidthSlider">
-                                <label for="constellationWidthSlider">Constellation Width</label>
-
+                                <div class="input-group pt-2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number" data-type="minus"
+                                            data-field="constellationWidth">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="constellationWidth" class="form-control input-number"
+                                        value="0.5" min="0" max="2" id="constellationWidthLabel">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number" data-type="plus"
+                                            data-field="constellationWidth">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <span>
+                                    <label for="constellationWidthLabel">Constellation Width</label>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -10381,13 +10427,45 @@
                                 <input type="color" id="graticule" name="graticule" value="#ffffff">
                                 <label for="graticule">Line Colors</label>
 
-                                <h5 id="graticuleSliderLabel">0.6</h5>
-                                <input type="range" min="0" max="1" value="0.6" class="slider" id="graticuleSlider">
-                                <label for="graticuleSlider">Line Opacity</label>
+                                <div class="input-group pt-2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number-sm" data-type="minus"
+                                            data-field="graticuleOpacity">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="graticuleOpacity" class="form-control input-number"
+                                        value="0.6" min="0" max="1" id="graticuleSliderLabel">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number-sm" data-type="plus"
+                                            data-field="graticuleOpacity">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <span>
+                                    <label for="graticuleSliderLabel">Line Opacity</label>
+                                </span>
 
-                                <h5 id="dashSliderLabel">1</h5>
-                                <input type="range" min="0" max="15" value="1" class="slider" id="dashSlider">
-                                <label for="dashSlider">Dash Length</label>
+                                <div class="input-group pt-2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number-lg" data-type="minus"
+                                            data-field="dashLength">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="dashLength" class="form-control input-number" value="1"
+                                        min="0" max="15" id="dashSliderLabel">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number-lg" data-type="plus"
+                                            data-field="dashLength">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <span>
+                                    <label for="dashSliderLabel">Dash Length</label>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -10403,101 +10481,19 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <section class="d-none d-md-block">
-                <div class="row">
-                    <div class="col p-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Globe</h5>
-                                <h6 class="card-subtitle mb-2 text-muted" id="globeLabel">#000000</h6>
-                                <p class="card-text">Customize the color of the background.</p>
-                                <input type="color" id="globe" name="globe" value="#000000">
-                                <label for="globe">Background Color</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Globe Outline</h5>
-                                <h6 class="card-subtitle mb-2 text-muted" id="globeOutlineLabel">#ffffff</h6>
-                                <p class="card-text">Customize the color of the globe outline.</p>
-                                <input type="color" id="globeOutline" name="globeOutline" value="#ffffff">
-                                <label for="globeOutline">Outline Color</label>
-                                <h5 id="outlineWidthLabel">4</h5>
-                                <input type="range" min="4" max="20" value="4" class="slider" id="outlineWidthSlider">
-                                <label for="outlineWidthSlider">Outline Width</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col p-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Stars</h5>
-                                <h6 class="card-subtitle mb-2 text-muted" id="starLabel">#ffffff</h6>
-                                <p class="card-text">Customize the color of the stars.</p>
-                                <input type="color" id="star" name="star" value="#ffffff">
-                                <label for="star">Star Color</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col p-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Constellations</h5>
-                                <h6 class="card-subtitle mb-2 text-muted" id="constellationLabel">#ffffff</h6>
-
-                                <p class="card-text">Customize the look of the constellations.</p>
-                                <input type="color" id="constellation" name="constellation" value="#ffffff">
-                                <label for="constellation">Constellation Color</label>
-
-                                <h5 id="constellationSliderLabel">1</h5>
-                                <input type="range" min="0" max="1" value="1" class="slider" id="constellationSlider">
-                                <label for="constellationSlider">Constellation Opacity</label>
-
-                                <h5 id="constellationWidthLabel">0.45</h5>
-                                <input type="range" min="0" max="2" value="0.45" class="slider"
-                                    id="constellationWidthSlider">
-                                <label for="constellationWidthSlider">Constellation Width</label>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col p-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Globe Lines</h5>
-                                <h6 class="card-subtitle mb-2 text-muted" id="graticuleLabel">#ffffff</h6>
-                                <p class="card-text">Customize the look of the longitude and latitude lines.</p>
-                                <input type="color" id="graticule" name="graticule" value="#ffffff">
-                                <label for="graticule">Line Colors</label>
-
-                                <h5 id="graticuleSliderLabel">0.6</h5>
-                                <input type="range" min="0" max="1" value="0.6" class="slider" id="graticuleSlider">
-                                <label for="graticuleSlider">Line Opacity</label>
-
-                                <h5 id="dashSliderLabel">1</h5>
-                                <input type="range" min="0" max="15" value="1" class="slider" id="dashSlider">
-                                <label for="dashSlider">Dash Length</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
         </div>
         <div class="row p-3">
             <div class="input-group p-3">
                 <button class="btn btn-primary" id="exportButton">Export Selections</button>
-                <input type="text" class="form-control" id="exportText"
-                    placeholder="starColor=%23ffff00&graticuleOpacity=0.35">
+                <textarea class="form-control" id="exportText"
+                    placeholder="starColor=%23ffff00&graticuleOpacity=0.35"></textarea>
             </div>
             <p style="text-align: center">Please submit your exported selection options with your order!</p>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
