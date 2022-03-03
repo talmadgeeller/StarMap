@@ -27,8 +27,8 @@
 }
 
 #stars * {
-    stroke: none;
     fill: var(--star-fill);
+    stroke: var(--star-fill);
 }
 
 #gridLines * {
