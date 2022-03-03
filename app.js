@@ -87,7 +87,7 @@ $('.btn-number-sm').click(function (e) {
         if (type == 'minus') {
 
             if (currentVal > input.attr('min')) {
-                input.val(currentVal - 0.1).change();
+                input.val(Math.round((currentVal - 0.1) * 10) / 10).change();
             }
             if (parseFloat(input.val()) == input.attr('min')) {
                 $(this).attr('disabled', true);
@@ -96,7 +96,7 @@ $('.btn-number-sm').click(function (e) {
         } else if (type == 'plus') {
 
             if (currentVal < input.attr('max')) {
-                input.val(currentVal + 0.1).change();
+                input.val(Math.round((currentVal + 0.1) * 10) / 10).change();
             }
             if (parseFloat(input.val()) == input.attr('max')) {
                 $(this).attr('disabled', true);
