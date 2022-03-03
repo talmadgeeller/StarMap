@@ -3,9 +3,11 @@
     --globe-outline: #ffffff;
     --star-fill: #ffffff;
     --constellation-fill: #ffffff;
+    --constellation-width: 0.45;
     --constellation-opacity: 1;
     --graticule-fill: #ffffff;
-    --graticule-opacity: 1;
+    --graticule-opacity: 0.6;
+    --graticule-dash: 1;
     --graticule-dash: 1;
 }
 
@@ -15,7 +17,7 @@
 
 #constLines * {
     fill: none;
-    stroke-width: 0.27px;
+    stroke-width: var(--constellation-width);
     stroke-opacity: var(--constellation-opacity);
     /* To change constellation color, change stroke */
     stroke: var(--constellation-fill);

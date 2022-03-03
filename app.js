@@ -4,6 +4,8 @@ const starLabel = document.querySelector('#starLabel');
 const constellationLabel = document.querySelector('#constellationLabel');
 const constellationSliderLabel = document.querySelector('#constellationSliderLabel');
 const constellationSlider = document.querySelector('#constellationSlider');
+const constellationWidthLabel = document.querySelector('#constellationWidthLabel');
+const constellationWidthSlider = document.querySelector('#constellationWidthSlider');
 const graticuleLabel = document.querySelector('#graticuleLabel');
 const graticuleSliderLabel = document.querySelector('#graticuleSliderLabel');
 const graticuleSlider = document.querySelector('#graticuleSlider');
@@ -38,6 +40,13 @@ document.querySelector("#constellationSlider").addEventListener('change', functi
     document.documentElement.style.setProperty('--constellation-opacity', this.value);
 });
 
+constellationWidthSlider.step = "0.05";
+
+document.querySelector("#constellationWidthSlider").addEventListener('change', function () {
+    constellationWidthLabel.textContent = this.value.toString();
+    document.documentElement.style.setProperty('--constellation-width', this.value);
+});
+
 document.querySelector("#graticule").addEventListener('change', function () {
     graticuleLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--graticule-fill', this.value);
@@ -63,5 +72,6 @@ document.querySelector("#exportButton").addEventListener('click', function () {
         }&constellationOpacity=${constellationSliderLabel.textContent
         }&graticuleColor=${graticuleLabel.textContent
         }&graticuleOpacity=${graticuleSliderLabel.textContent
-        }&graticuleDash=${dashSliderLabel.textContent}`.replace('#', '%23');
+        }&graticuleDash=${dashSliderLabel.textContent
+        }&constellationWidth=${constellationWidthLabel.textContent}`.replace('#', '%23');
 });
