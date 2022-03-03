@@ -1,5 +1,7 @@
 const globeLabel = document.querySelector('#globeLabel');
 const globeOutlineLabel = document.querySelector('#globeOutlineLabel');
+const outlineWidthLabel = document.querySelector('#outlineWidthLabel');
+const outlineWidthSlider = document.querySelector('#outlineWidthSlider');
 const starLabel = document.querySelector('#starLabel');
 const constellationLabel = document.querySelector('#constellationLabel');
 const constellationSliderLabel = document.querySelector('#constellationSliderLabel');
@@ -21,6 +23,13 @@ document.querySelector("#globe").addEventListener('change', function () {
 document.querySelector("#globeOutline").addEventListener('change', function () {
     globeOutlineLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--globe-outline', this.value);
+});
+
+outlineWidthSlider.step = "1";
+
+document.querySelector("#outlineWidthSlider").addEventListener('change', function () {
+    outlineWidthLabel.textContent = this.value.toString();
+    document.documentElement.style.setProperty('--globe-outline-width', this.value);
 });
 
 document.querySelector("#star").addEventListener('change', function () {
@@ -73,5 +82,6 @@ document.querySelector("#exportButton").addEventListener('click', function () {
         }&graticuleColor=${graticuleLabel.textContent
         }&graticuleOpacity=${graticuleSliderLabel.textContent
         }&graticuleDash=${dashSliderLabel.textContent
-        }&constellationWidth=${constellationWidthLabel.textContent}`.replace('#', '%23');
+        }&constellationWidth=${constellationWidthLabel.textContent
+        }&outlineWidth=${outlineWidthLabel.textContent}`.replace('#', '%23');
 });
