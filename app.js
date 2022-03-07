@@ -39,4 +39,28 @@ document.querySelector("#exportButton").addEventListener('click', function () {
         graticuleColor: graticuleLabel.textContent
     }
     customizations.innerText = JSON.stringify(results, null, 4);
+    $("#copyTextButton").show();
 });
+
+function CopyToClipboard(id) {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    $("#copyTextButton").attr('data-bs-original-title', 'Copied Customizations!')
+        .tooltip('update')
+        .tooltip('show');
+}
+
+function outFunc() {
+    $("#copyTextButton").attr('data-bs-original-title', 'Copy to Clipboard')
+        .tooltip('update');
+}
+
+// Enable all tooltips
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $("#copyTextButton").hide();
+})
