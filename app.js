@@ -3,7 +3,7 @@ const globeOutlineLabel = document.querySelector('#globeOutlineLabel');
 const starLabel = document.querySelector('#starLabel');
 const constellationLabel = document.querySelector('#constellationLabel');
 const graticuleLabel = document.querySelector('#graticuleLabel');
-const exportText = document.querySelector('#exportText');
+const customizations = document.querySelector('#customizations');
 
 document.querySelector("#globe").addEventListener('change', function () {
     globeLabel.textContent = this.value.toString();
@@ -31,7 +31,12 @@ document.querySelector("#graticule").addEventListener('change', function () {
 });
 
 document.querySelector("#exportButton").addEventListener('click', function () {
-    exportText.value = `backgroundColor=${globeLabel.textContent}&outlineColor=${globeOutlineLabel.textContent}&starColor=${starLabel.textContent
-        }&constellationColor=${constellationLabel.textContent
-        }&graticuleColor=${graticuleLabel.textContent}`.replaceAll('#', '%23');
+    const results = {
+        backgroundColor: globeLabel.textContent,
+        outlineColor: globeOutlineLabel.textContent,
+        starColor: starLabel.textContent,
+        constellationColor: constellationLabel.textContent,
+        graticuleColor: graticuleLabel.textContent
+    }
+    customizations.innerText = JSON.stringify(results, null, 4);
 });
