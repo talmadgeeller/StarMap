@@ -1,7 +1,7 @@
 :root {
     --globe-fill: #000000;
     --globe-outline: #ffffff;
-    --globe-outline-width: 4;
+    --globe-outline-width: 14;
     --star-fill: #ffffff;
     --constellation-fill: #ffffff;
     --constellation-width: 0.5;
