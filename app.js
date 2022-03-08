@@ -51,7 +51,7 @@ document.querySelector("#exportButton").addEventListener('click', function () {
 });
 
 function CopyToClipboard(id) {
-    var r = document.createRange();
+    var r = document.createRange(0, 99999);
     r.selectNode(document.getElementById(id));
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(r);
