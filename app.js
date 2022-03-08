@@ -52,11 +52,13 @@ document.querySelector("#exportButton").addEventListener('click', function () {
 
 function CopyToClipboard(id) {
     var r = document.createRange(0, 99999);
-    r.selectNode(document.getElementById(id));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
+    const selection = window.getSelection();
+    r.selectNodeContents(document.getElementById(id));
+    selection.removeAllRanges();
+    selection.addRange(r);
+
     document.execCommand('copy');
-    window.getSelection().removeAllRanges();
+    selection.removeAllRanges();
     $("#copyTextButton").attr('data-bs-original-title', 'Copied to Clipboard!')
         .tooltip('update')
         .tooltip('show');
