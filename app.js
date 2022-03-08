@@ -49,7 +49,7 @@ function createExportData() {
         $("#copyTextButton").hide();
     }
     else {
-        customizations.innerText = JSON.stringify(results, null, 1).replace("{", "").replace("}", "").trim();
+        customizations.innerText = " " + JSON.stringify(results, null, 1).replace("{", "").replace("}", "").trim();
         $("#copyTextButton").show();
     }
 }
