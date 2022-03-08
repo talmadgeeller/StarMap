@@ -11,24 +11,28 @@ document.querySelector("#globe").addEventListener('change', function () {
         document.documentElement.style.setProperty('--graticule-fill', "#000000");
     else
         document.documentElement.style.setProperty('--graticule-fill', "#ffffff");
+    createExportData();
 });
 
 document.querySelector("#globeOutline").addEventListener('change', function () {
     globeOutlineLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--globe-outline', this.value);
+    createExportData();
 });
 
 document.querySelector("#star").addEventListener('change', function () {
     starLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--star-fill', this.value);
+    createExportData();
 });
 
 document.querySelector("#constellation").addEventListener('change', function () {
     constellationLabel.textContent = this.value.toString();
     document.documentElement.style.setProperty('--constellation-fill', this.value);
+    createExportData();
 });
 
-document.querySelector("#exportButton").addEventListener('click', function () {
+function createExportData() {
     const results = {};
 
     if (globeLabel.textContent !== "#000000")
@@ -45,10 +49,10 @@ document.querySelector("#exportButton").addEventListener('click', function () {
         $("#copyTextButton").hide();
     }
     else {
-        customizations.innerText = JSON.stringify(results, null, 4);
+        customizations.innerText = JSON.stringify(results, null, 1).replace("{", "").replace("}", "").trim();
         $("#copyTextButton").show();
     }
-});
+}
 
 function CopyToClipboard(id) {
     var r = document.createRange(0, 99999);
@@ -59,19 +63,14 @@ function CopyToClipboard(id) {
 
     document.execCommand('copy');
     selection.removeAllRanges();
-    $("#copyTextButton").attr('data-bs-original-title', 'Copied to Clipboard!')
-        .tooltip('update')
-        .tooltip('show');
+    document.getElementById("copyTextButton").innerText = "Copied to Clipboard!";
 }
 
 function outFunc() {
-    $("#copyTextButton").attr('data-bs-original-title', 'Copy to Clipboard')
-        .tooltip('update');
+    document.getElementById("copyTextButton").innerText = "Copy Customizations";
 }
 
-// Enable all tooltips
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip();
     $("#copyTextButton").hide();
 })
 

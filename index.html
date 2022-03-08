@@ -10375,11 +10375,9 @@
 
         </div>
         <div class="col p-3 d-flex align-items-center" style="flex-direction: column;">
-            <button class="btn btn-primary" id="exportButton">Generate Customizations</button>
-            <pre class="mt-3 mb-2" id="customizations"></pre>
-            <button class="btn btn-secondary mb-2" onmouseout="outFunc()"
-                onclick="CopyToClipboard('customizations');return false;" data-toggle="tooltip" data-placement="top"
-                title="Copy to Clipboard" id="copyTextButton">
+            <pre class="mb-3" id="customizations"></pre>
+            <button class="btn btn-outline-success mb-2" onmouseout="outFunc()"
+                onclick="CopyToClipboard('customizations');return false;" id="copyTextButton">
                 Copy Customizations</button>
 
             <p style="text-align: center">Please copy and paste your color customizations generated above to send
