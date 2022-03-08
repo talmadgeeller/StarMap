@@ -4,8 +4,8 @@
     --globe-outline-width: 14;
     --star-fill: #ffffff;
     --constellation-fill: #ffffff;
-    --constellation-width: 0.5;
-    --constellation-opacity: 1;
+    --constellation-width: 2;
+    --constellation-opacity: 0.425;
     --graticule-fill: #ffffff;
     --graticule-opacity: 0.6;
     --graticule-dash: 1;
